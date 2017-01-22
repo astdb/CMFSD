@@ -8,13 +8,22 @@ import (
 )
 
 func main(){
-
+    input_test := []int{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20, 1000000000}
+    
+    for _, i := range input_test {
+        fmt.Printf("%d -> %v\n", i, GetDivisors(i))
+    }
 }
 
-function GetDivisors(input int) []int {
-    for i := 0; i < input; i++ {
+// GetDivisors takes a single positive integer and returns a slice of integers containing the positice divisors of the input. 
+func GetDivisors(input int) []int {
+    var divisors []int
+
+    for i := 1; i < input; i++ {
         if input % i == 0 {
-            
+            divisors = append(divisors, i)
         } 
     }
+
+    return divisors
 } 
