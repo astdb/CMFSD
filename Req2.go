@@ -19,7 +19,11 @@ func main(){
 func GetDivisors(input int) []int {
     var divisors []int
 
-    for i := 1; i < input; i++ {
+    if input <= 0 {
+        return divisors
+    }
+
+    for i := 1; i <= input; i++ {
         if input % i == 0 {
             divisors = append(divisors, i)
         } 
