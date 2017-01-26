@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>JavaScript Requirements - Requirement 5</title>
+        <!--
+            Extend the String object with startsWith and endsWith methods to check if a string starts/ends with a given substring.
+        -->
+        <script type="text/javascript">
+            String.prototype.startsWith = function(startString) {
+                if(this.length < startString.length){
+                    return false;
+                }
+
+                if(this.substr(0, startString.length) === startString){
+                    return true;
+                }
+
+                return false;
+            };
+
+            String.prototype.endsWith = function (endString) {
+                if(this.length < endString.length){
+                    return false;
+                }
+
+                if( this.substr(this.length-endString.length, endString.length) === endString ){
+                    return true;
+                }
+
+                return false;
+            };            
+        
+            var testStr = "hang the dj";
+            document.writeln("<pre>");
+            document.writeln("\"" + testStr + "\".startsWith(\"hang\") === " + testStr.startsWith("hang"));
+            document.writeln("\"" + testStr + "\".startsWith(\"Hang\") === " + testStr.startsWith("Hang"));
+            document.writeln("\"" + testStr + "\".startsWith(\"I’ve got a room for rent\") === " + testStr.startsWith("I’ve got a room for rent"));
+            document.writeln("\"" + testStr + "\".startsWith(\"\") === " + testStr.startsWith(""));
+            document.writeln("\"" + testStr + "\".startsWith(\"hang the\") === " + testStr.startsWith("hang"));
+            document.writeln("\"" + testStr + "\".startsWith(\"han\") === " + testStr.startsWith("hang"));
+            document.writeln("\"" + testStr + "\".startsWith(\"hang t\") === " + testStr.startsWith("hang"));
+            document.writeln("\"" + testStr + "\".startsWith(42) === " + testStr.startsWith(42));
+            document.writeln("\"" + testStr + "\".startsWith({ first: \"Johnny\" }) === " + testStr.startsWith({ first: "Johnny" }));            
+            document.writeln("</pre>");
+
+            document.writeln("<pre>");
+            document.writeln("\"" + testStr + "\".endsWith(\"dj\") === " + testStr.endsWith("dj"));
+            document.writeln("\"" + testStr + "\".endsWith(\"panic on the streets\") === " + testStr.endsWith("panic on the streets"));
+            document.writeln("\"" + testStr + "\".endsWith(\"\") === " + testStr.endsWith(""));
+            document.writeln("\"" + testStr + "\".endsWith(\"the dj\") === " + testStr.endsWith("the dj"));
+            document.writeln("\"" + testStr + "\".endsWith(\"e dj\") === " + testStr.endsWith("e dj"));
+            document.writeln("\"" + testStr + "\".endsWith(\"j\") === " + testStr.endsWith("j"));
+            document.writeln("\"" + testStr + "\".endsWith(42) === " + testStr.endsWith(42));
+            document.writeln("\"" + testStr + "\".endsWith({ first: \"Johnny\" }) === " + testStr.endsWith({ first: "Johnny" }));
+            document.writeln("</pre>");
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
