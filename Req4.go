@@ -16,13 +16,13 @@ func main() {
     fmt.Println(MostCommon(inputList))
 }
 
-// MostCommon takes in a list of integers and returns another list that contins those integers which are most common 
+// MostCommon takes in a list of integers and returns another list that contains those integers which are most common 
 // on the input array
 func MostCommon(input []int) []int {
     // use an int-to-int map (https://blog.golang.org/go-maps-in-action) to keep track of occurence frequencies of integers
     // for every integer in the input list, add as a key with value 1 if not existing in the map or add key with value 1
     freqTracker := make(map[int]int)
-    repeatKeys := false // flag indicating if there are any integers with a freqquency >1
+    repeatKeys := false // flag indicating if there are any integers with a frequency >1
     topFreq := 1    // highest frequency of an integer recorded
 
     for _, i := range input {
